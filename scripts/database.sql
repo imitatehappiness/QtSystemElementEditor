@@ -1,4 +1,4 @@
-﻿-- Create table
+-- Create table
 DROP TABLE IF EXISTS schema CASCADE;
 
 -- id Идентификатор элемента
@@ -27,10 +27,14 @@ INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE
 INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 2'), 3, 'Объект 6', 102);
 
 INSERT INTO schema (id_up, type, name, size) VALUES(null, 1, 'Контейнер 3', null);
+INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 3'), 2, 'Объект 10', 102);
 INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 3'), 1, 'Контейнер 4', null);
 INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 4'), 2, 'Объект 7', 104);
 INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 4'), 3, 'Объект 8', 104);
 INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 4'), 3, 'Объект 9', 104);
-INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 4'), 2, 'Объект 10', 104);
 
-
+INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 3'), 1, 'Контейнер 5', 102);
+INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 5'), 3, 'Объект 11', 104);
+INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 5'), 2, 'Объект 12', 104);
+INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 3'), 2, 'Объект 13', 102);
+INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 3'), 2, 'Объект 14', 102);
