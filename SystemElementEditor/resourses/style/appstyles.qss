@@ -2,14 +2,6 @@ QTreeView {
     selection-background-color: green;
 }
 
-QTreeView::item:selected {
-    background-color: green;
-}
-
 QTableView {
     selection-background-color: green;
-}
-
-QTableView::item:selected {
-    background-color: green;
 }

@@ -86,6 +86,8 @@ void SystemElementEditor::typeChanged(const QModelIndex &index){
  * \param size новые размер элемента
  */
 void SystemElementEditor::sizeChanged(const QString &id, int size){
+    ui->tableView_type2->clearSelection();
+    ui->tableView_type3->clearSelection();
     for(auto &item : mTreeItems){
         if(id == item->getDataByIndex(TREE_ITEM_ID).toString()){
             item->setData(TREE_ITEM_SIZE, size);

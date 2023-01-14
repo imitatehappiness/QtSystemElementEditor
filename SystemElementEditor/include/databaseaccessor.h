@@ -13,6 +13,8 @@
 /*!
  * \class DatabaseAccessor
  * \brief обеспечивает доступ к базе данных и выполнение sql запросов
+ *
+ * \details по хорошему нужно было переписать на потоки
  */
 class DatabaseAccessor : public QObject{
     Q_OBJECT
