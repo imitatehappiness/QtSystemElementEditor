@@ -18,7 +18,7 @@ class DatabaseAccessor : public QObject{
     Q_OBJECT
 public:
     static DatabaseAccessor* getInstance();
-    static QVector<QVector<QVariant>> executeSqlQuery();
+    QVector<QVector<QVariant>> executeSqlQuery();
     void setQuery(const QString &value);
 private:
     QString query;

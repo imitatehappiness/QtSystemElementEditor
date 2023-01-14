@@ -93,7 +93,7 @@ bool TableModel::setData(const QModelIndex &index, const QVariant &value, int ro
     QString query = "UPDATE schema SET size=" + size + " WHERE id='" +id + "'";
     QVector<QVector<QVariant>> resultSqlQuery;
     DatabaseAccessor::getInstance()->setQuery(query);
-    resultSqlQuery = DatabaseAccessor::executeSqlQuery();
+    resultSqlQuery = DatabaseAccessor::getInstance()->executeSqlQuery();
     return true;
 }
 

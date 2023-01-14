@@ -205,7 +205,7 @@ bool TreeModel::setData(const QModelIndex &index, const QVariant &value, int rol
     QString query = "UPDATE schema SET type=" + QString::number(type) + " WHERE id='" + getIdItemByIndex(index).toString() + "'";
     QVector<QVector<QVariant>> resultSqlQuery;
     DatabaseAccessor::getInstance()->setQuery(query);
-    resultSqlQuery = DatabaseAccessor::executeSqlQuery();
+    resultSqlQuery = DatabaseAccessor::getInstance()->executeSqlQuery();
 
     return result;
 }

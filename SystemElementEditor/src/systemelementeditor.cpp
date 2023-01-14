@@ -20,7 +20,6 @@ SystemElementEditor::SystemElementEditor(QWidget *parent)
     ui->l_type3->setText("<strong>Элементы \"Тип 3\":</strong>");
 
     parseTableShema();
-
     /// tree
     mTreeModel = new TreeModel();
     mTreeModel->setupModelData(mTreeItems);
