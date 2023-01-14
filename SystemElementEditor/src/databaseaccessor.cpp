@@ -49,8 +49,11 @@ QVector<QVector<QVariant>> DatabaseAccessor::executeSqlQuery(){
     return result;
 }
 
-void DatabaseAccessor::setQuery(const QString &value)
-{
+/*!
+ * \brief DatabaseAccessor::setQuery установка sql запроса
+ * \param value запрос
+ */
+void DatabaseAccessor::setQuery(const QString &value){
     query = value;
 }
 
