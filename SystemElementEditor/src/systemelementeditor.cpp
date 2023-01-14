@@ -19,15 +19,6 @@ SystemElementEditor::SystemElementEditor(QWidget *parent)
     ui->l_type2->setText("<strong>Элементы \"Тип 2\":</strong>");
     ui->l_type3->setText("<strong>Элементы \"Тип 3\":</strong>");
 
-    QThread *thread = new QThread();
-    DatabaseAccessor::getInstance()->moveToThread(thread);
-
-    //connect(thread,&QThread::started,this,&DatabaseAccessor::slotStartArticlesList);
-   // connect(thread,&QThread::started,lsArticles,&ListArticles::createListGoods);
-
-    connect(thread,&QThread::finished,thread,&QThread::deleteLater);
-    thread->start();
-
     parseTableShema();
 
     /// tree
