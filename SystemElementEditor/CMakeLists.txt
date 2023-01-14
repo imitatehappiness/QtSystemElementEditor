@@ -1,0 +1,67 @@
+cmake_minimum_required(VERSION 3.14)
+
+if (WIN32)
+    project(SystemElementEditor LANGUAGES CXX)
+elseif(UNIX)
+    project(SystemElementEditor)
+endif()
+
+set(CMAKE_CONFIGURATION_TYPES "Release;RelWithDebInfo" CACHE STRING "" FORCE)
+
+#======================= INCLUSION OF Qt =======================#
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_PREFIX_PATH $ENV{QTDIR})
+find_package(Qt5Core REQUIRED)
+find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Sql REQUIRED)
+
+#=================== INCLUSION OF Project Files ====================#
+set(FORMS_DIR "${CMAKE_SOURCE_DIR}/forms")
+set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
+set(SOURCE_DIR "${CMAKE_SOURCE_DIR}/src")
+set(CONFIGS_DIR "${CMAKE_SOURCE_DIR}/configs")
+set(RESOURSES_DIR "${CMAKE_SOURCE_DIR}/resourses")
+
+include_directories(${FORMS_DIR})
+include_directories(${INCLUDE_DIR})
+include_directories(${SOURCE_DIR})
+include_directories(${CONFIGS_DIR})
+include_directories(${RESOURSES_DIR})
+
+file(GLOB_RECURSE SOURCES
+    "${FORMS_DIR}/*.ui"
+    "${FORMS_DIR}/*.qrc"
+    "${INCLUDE_DIR}/*.h"
+    "${SOURCE_DIR}/*.cpp"
+    "${CONFIGS_DIR}/*.ini"
+    "${RESOURSES_DIR}/*.qrc"
+)
+
+#=================== SETUP EXECTUABLE ====================#
+# Enable debug logging on RELWITHDEBINFO configuration
+set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS
+    $<$<CONFIG:RELWITHDEBINFO>:QT_MESSAGELOGCONTEXT>
+)
+
+# Add the forms directory to the AUTOUIC search paths
+set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${FORMS_DIR})
+
+# Add the executable
+if (WIN32) 
+    add_executable(SystemElementEditor WIN32 ${SOURCES})
+elseif(UNIX)
+    add_executable(SystemElementEditor ${SOURCES})
+endif()
+
+# Add the target includes for MY_PROJECT
+target_include_directories(SystemElementEditor PRIVATE ${FORMS_DIR})
+target_include_directories(SystemElementEditor PRIVATE ${INCLUDE_DIR})
+target_include_directories(SystemElementEditor PRIVATE ${SOURCE_DIR})
+target_include_directories(SystemElementEditor PRIVATE ${CONFIGS_DIR})
+target_include_directories(SystemElementEditor PRIVATE ${RESOURSES_DIR})
+
+#===================== LINKING LIBRARIES =======================#
+target_link_libraries(SystemElementEditor Qt5::Widgets)
+target_link_libraries(SystemElementEditor Qt5::Sql)
