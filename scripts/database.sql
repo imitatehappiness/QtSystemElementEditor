@@ -1,4 +1,4 @@
--- Create table
+﻿-- Create table
 DROP TABLE IF EXISTS schema CASCADE;
 
 -- id Идентификатор элемента
@@ -38,4 +38,3 @@ INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE
 INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 5'), 2, 'Объект 12', 104);
 INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 3'), 2, 'Объект 13', 102);
 INSERT INTO schema (id_up, type, name, size) VALUES((SELECT id FROM schema WHERE name='Контейнер 3'), 2, 'Объект 14', 102);
-

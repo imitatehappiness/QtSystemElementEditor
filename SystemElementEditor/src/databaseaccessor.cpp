@@ -34,10 +34,10 @@ DatabaseAccessor* DatabaseAccessor::getInstance(){
  * \param query запрос
  * \return результат выполнения запроса
  */
-QVector<QVector<QVariant>> DatabaseAccessor::executeSqlQuery(const QString& query){
+QVector<QVector<QVariant>> DatabaseAccessor::executeSqlQuery(){
     QVector<QVector<QVariant>> result;
     QSqlQuery sqlQuery(DatabaseAccessor::getInstance()->mDBPtr);
-    sqlQuery.exec(query);
+    sqlQuery.exec(DatabaseAccessor::getInstance()->query);
 
     while(sqlQuery.next()){
         QVector<QVariant> collum;
@@ -47,6 +47,11 @@ QVector<QVector<QVariant>> DatabaseAccessor::executeSqlQuery(const QString& quer
         result.append(collum);
     }
     return result;
+}
+
+void DatabaseAccessor::setQuery(const QString &value)
+{
+    query = value;
 }
 
 

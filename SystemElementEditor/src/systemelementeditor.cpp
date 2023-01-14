@@ -19,6 +19,15 @@ SystemElementEditor::SystemElementEditor(QWidget *parent)
     ui->l_type2->setText("<strong>Элементы \"Тип 2\":</strong>");
     ui->l_type3->setText("<strong>Элементы \"Тип 3\":</strong>");
 
+    QThread *thread = new QThread();
+    DatabaseAccessor::getInstance()->moveToThread(thread);
+
+    //connect(thread,&QThread::started,this,&DatabaseAccessor::slotStartArticlesList);
+   // connect(thread,&QThread::started,lsArticles,&ListArticles::createListGoods);
+
+    connect(thread,&QThread::finished,thread,&QThread::deleteLater);
+    thread->start();
+
     parseTableShema();
 
     /// tree
@@ -99,7 +108,8 @@ void SystemElementEditor::sizeChanged(const QString &id, int size){
  * \brief SystemElementEditor::parseTableShema формирование списка элементов из таблицы schema
  */
 void SystemElementEditor::parseTableShema(){
-    QVector<QVector<QVariant>> result = DatabaseAccessor::getInstance()->executeSqlQuery("SELECT * FROM schema");
+    DatabaseAccessor::getInstance()->setQuery("SELECT * FROM schema");
+    QVector<QVector<QVariant>> result = DatabaseAccessor::getInstance()->executeSqlQuery();
 
     for(int i = 0; i < result.size(); i++){
         QVector<QVariant> itemData{result[i][3].toString(), result[i][2].toInt(), result[i][0].toString(), result[i][1].toString(), result[i][4].toInt()};
