@@ -1,6 +1,6 @@
 # QtSystemElementEditor
 
->**PostgreSQL:**  9.6 32bit
+>**PostgreSQL:**  9.6
 >
 >**Компилятор:**  MinGW 5.3.0 32bit
 >
