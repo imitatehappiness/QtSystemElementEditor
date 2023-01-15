@@ -10,7 +10,7 @@ QSqlDatabase DatabaseAccessor::mDBPtr;
  */
 DatabaseAccessor::DatabaseAccessor(){
     QString pathConfig = QDir::currentPath();
-    QSettings settings(pathConfig.left(pathConfig.lastIndexOf(QChar('/'))) + "/configs/config.ini", QSettings::IniFormat);
+    QSettings settings(pathConfig.left(pathConfig.lastIndexOf(QChar('/'))) + "/SystemElementEditor/configs/config.ini", QSettings::IniFormat);
 
     mDBPtr = QSqlDatabase::addDatabase(settings.value("CONNECT/DatabaseType").toString());
     mDBPtr.setHostName(settings.value("CONNECT/HostName").toString());

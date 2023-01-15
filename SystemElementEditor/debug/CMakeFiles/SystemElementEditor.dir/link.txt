@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\SystemElementEditor.dir/objects.a
-C:\Qt\Qt5.11.0\Tools\mingw530_32\bin\ar.exe qc CMakeFiles\SystemElementEditor.dir/objects.a @CMakeFiles\SystemElementEditor.dir\objects1
-C:\Qt\Qt5.11.0\Tools\mingw530_32\bin\g++.exe -mwindows -Wl,--whole-archive CMakeFiles\SystemElementEditor.dir/objects.a -Wl,--no-whole-archive -o SystemElementEditor.exe -Wl,--out-implib,libSystemElementEditor.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\SystemElementEditor.dir\linkLibs.rsp
