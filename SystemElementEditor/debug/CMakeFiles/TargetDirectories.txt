@@ -1,0 +1,4 @@
+C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/CMakeFiles/SystemElementEditor.dir
+C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/CMakeFiles/edit_cache.dir
+C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/CMakeFiles/rebuild_cache.dir
+C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/CMakeFiles/SystemElementEditor_autogen.dir

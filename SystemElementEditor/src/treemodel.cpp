@@ -19,7 +19,7 @@ TreeModel::~TreeModel(){
 }
 
 /*!
- * \brief TreeModel::index получить модельный индекс по строке и столбцу
+ * \brief TreeModel::index получение модельного индекса по строке и столбцу
  * \param row строка
  * \param column столбец
  * \param parentIndex модельный индекс родителя

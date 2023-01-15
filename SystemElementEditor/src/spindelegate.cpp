@@ -3,7 +3,8 @@
  * \brief SpinDelegate::SpinDelegate конструктор
  * \param parent родитель
  */
-SpinDelegate::SpinDelegate(QObject *parent):QItemDelegate(parent)
+SpinDelegate::SpinDelegate(QObject *parent):
+    QItemDelegate(parent)
 {
 
 }

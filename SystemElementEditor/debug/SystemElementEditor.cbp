@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SystemElementEditor"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\Qt\;CMake Files\..\..\..\..\Qt\Qt5.11.0\;CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\;CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\;CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\;CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\;CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Core\;CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Sql\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SystemElementEditor">
+				<Option output="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/SystemElementEditor.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add option="-DQT_SQL_LIB"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/SystemElementEditor_autogen/include"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/forms"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/include"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/src"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/configs"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/resourses"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include/QtWidgets"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include/QtGui"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include/QtANGLE"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include/QtCore"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/./mkspecs/win32-g++"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include/QtSql"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/include"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/include-fixed"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 SystemElementEditor"/>
+					<CompileFile command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SystemElementEditor/fast">
+				<Option output="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/SystemElementEditor.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add option="-DQT_SQL_LIB"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/SystemElementEditor_autogen/include"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/forms"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/include"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/src"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/configs"/>
+					<Add directory="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/resourses"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include/QtWidgets"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include/QtGui"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include/QtANGLE"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include/QtCore"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/./mkspecs/win32-g++"/>
+					<Add directory="C:/Qt/Qt5.11.0/5.11.0/mingw53_32/include/QtSql"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/include"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/include-fixed"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Qt/Qt5.11.0/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 SystemElementEditor/fast"/>
+					<CompileFile command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SystemElementEditor_autogen">
+				<Option working_dir="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 SystemElementEditor_autogen"/>
+					<CompileFile command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Qt5.11.0/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/configs/config.ini">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/SystemElementEditor_autogen/include/forms/ui_systemelementeditor.h">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/debug/SystemElementEditor_autogen/mocs_compilation.cpp">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/forms/systemelementeditor.ui">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/include/comboboxdelegate.h">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/include/databaseaccessor.h">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/include/spindelegate.h">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/include/systemelementeditor.h">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/include/tableitem.h">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/include/tablemodel.h">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/include/treeitem.h">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/include/treemodel.h">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/resourses/appstyle.qrc">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/src/comboboxdelegate.cpp">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/src/databaseaccessor.cpp">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/src/main.cpp">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/src/spindelegate.cpp">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/src/systemelementeditor.cpp">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/src/tableitem.cpp">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/src/tablemodel.cpp">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/src/treeitem.cpp">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/src/treemodel.cpp">
+			<Option target="SystemElementEditor"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QFlatpakThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Sql/Qt5SqlConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QMYSQLDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QODBCDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QPSQLDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="C:/imitatehappiness/devel/QtSystemElementEditor/SystemElementEditor/../../../../Qt/Qt5.11.0/5.11.0/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QSQLiteDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.11.0\5.11.0\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

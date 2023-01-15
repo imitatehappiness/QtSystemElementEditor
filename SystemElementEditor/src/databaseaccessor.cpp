@@ -5,6 +5,8 @@ QSqlDatabase DatabaseAccessor::mDBPtr;
 /*!
  * \brief DatabaseAccessor::DatabaseAccessor конструктор
  * \details подключение к базе данных
+ *
+ * \details по хорошему нужно было переписать на потоки
  */
 DatabaseAccessor::DatabaseAccessor(){
     QString pathConfig = QDir::currentPath();
@@ -30,14 +32,14 @@ DatabaseAccessor* DatabaseAccessor::getInstance(){
 }
 
 /*!
- * \brief DatabaseAccessor::executeSqlQuery выполнения sql запроса
+ * \brief DatabaseAccessor::executeSqlQuery выполнение sql запроса
  * \param query запрос
  * \return результат выполнения запроса
  */
 QVector<QVector<QVariant>> DatabaseAccessor::executeSqlQuery(){
     QVector<QVector<QVariant>> result;
     QSqlQuery sqlQuery(DatabaseAccessor::getInstance()->mDBPtr);
-    sqlQuery.exec(DatabaseAccessor::getInstance()->query);
+    sqlQuery.exec(DatabaseAccessor::getInstance()->mQuery);
 
     while(sqlQuery.next()){
         QVector<QVariant> collum;
@@ -53,8 +55,8 @@ QVector<QVector<QVariant>> DatabaseAccessor::executeSqlQuery(){
  * \brief DatabaseAccessor::setQuery установка sql запроса
  * \param value запрос
  */
-void DatabaseAccessor::setQuery(const QString &value){
-    query = value;
+void DatabaseAccessor::setQuery(const QString &query){
+    mQuery = query;
 }
 
 

@@ -20,6 +20,7 @@ SystemElementEditor::SystemElementEditor(QWidget *parent)
     ui->l_type3->setText("<strong>Элементы \"Тип 3\":</strong>");
 
     parseTableShema();
+
     /// tree
     mTreeModel = new TreeModel();
     mTreeModel->setupModelData(mTreeItems);
@@ -88,6 +89,7 @@ void SystemElementEditor::typeChanged(const QModelIndex &index){
 void SystemElementEditor::sizeChanged(const QString &id, int size){
     ui->tableView_type2->clearSelection();
     ui->tableView_type3->clearSelection();
+    ui->treeView_systemComposition->setFocus();
     for(auto &item : mTreeItems){
         if(id == item->getDataByIndex(TREE_ITEM_ID).toString()){
             item->setData(TREE_ITEM_SIZE, size);
