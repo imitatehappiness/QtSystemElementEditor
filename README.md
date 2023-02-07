@@ -22,4 +22,3 @@ Only when an element of type "Type 1" is selected in the tree in the right table
 show only its directly nested elements, if any, with "Type 2" elements in the upper table, and "Type 3" elements in the lower table.
 
 In the "System Composition" three, you can edit the ***"Type"*** column using ***QComboBox***. Write the changed values to the database. In the right tables ***("Elements Type n")***, only the ***"Size"*** column is available for editing. Write the changed values to the database. When displaying the size value, show all negative values in ***bold red***.
-
