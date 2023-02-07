@@ -1,7 +1,7 @@
 # QtSystemElementEditor
 
->**PostgreSQL:**  9.6
+>**PostgreSQL:**  9.6 32bit
 >
->**Компилятор:**  MinGW 5.3.0 32bit
+>**Compiler:**  MinGW 5.3.0 32bit
 >
->**Профиль Qt:**  Qt 5.11.0 MinGW 32bit
+>**Profile Qt:**  5.11.0 MinGW 32bit
