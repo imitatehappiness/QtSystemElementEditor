@@ -204,10 +204,9 @@ bool TreeModel::setData(const QModelIndex &index, const QVariant &value, int rol
     auto query = QString( "UPDATE scheme SET type=%1 WHERE id='%2';" )
          .arg(type)
          .arg(getIdItemByIndex(index).toString());
-    QVector<QVector<QVariant>> resultSqlQuery;
-    DatabaseAccessor::getInstance()->setQuery(query);
-    resultSqlQuery = DatabaseAccessor::getInstance()->executeSqlQuery();
 
+    DatabaseAccessor::getInstance()->setQuery(query);
+    result = DatabaseAccessor::getInstance()->executeUpdateQuery();
     return result;
 }
 

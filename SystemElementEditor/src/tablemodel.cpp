@@ -90,10 +90,10 @@ bool TableModel::setData(const QModelIndex &index, const QVariant &value, int ro
     auto query = QString( "UPDATE scheme SET size=%1 WHERE id='%2';" )
          .arg(size)
          .arg(id);
-    QVector<QVector<QVariant>> resultSqlQuery;
+
     DatabaseAccessor::getInstance()->setQuery(query);
-    resultSqlQuery = DatabaseAccessor::getInstance()->executeSqlQuery();
-    return true;
+    bool result = DatabaseAccessor::getInstance()->executeUpdateQuery();
+    return result;
 }
 
 /*!

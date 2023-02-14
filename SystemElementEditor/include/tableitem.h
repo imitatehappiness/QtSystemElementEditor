@@ -27,6 +27,7 @@ public:
     QVector<QVariant> getData() const;
     void setDataByIndex(int index, QVariant value);
     QVariant getDataByIndex(int index);
+
 private:
     /// список данных
     QVector<QVariant> mData;

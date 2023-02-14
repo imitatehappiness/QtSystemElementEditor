@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     a.setStyle(new QProxyStyle(QStyleFactory::create("Fusion")));
     a.setFont(QFont(FONT_FAMILY_APP, FONT_SIZE_APP));
     QString stylePath = QDir::currentPath();
-    stylePath = stylePath.left(stylePath.lastIndexOf(QChar('/'))) + "/SystemElementEditor/resourses/style/appstyles.qss";
+    stylePath = stylePath.left(stylePath.lastIndexOf(QChar('/'))) + "/SystemElementEditor/resources/style/appstyles.qss";
     QFile styleFile(stylePath);
     styleFile.open(QFile::ReadOnly);
     QString styleQSS = styleFile.readAll();

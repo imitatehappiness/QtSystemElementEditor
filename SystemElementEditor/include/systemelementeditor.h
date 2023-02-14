@@ -29,6 +29,14 @@ class SystemElementEditor : public QMainWindow{
 public:
     explicit SystemElementEditor(QWidget *parent = nullptr);
     ~SystemElementEditor();
+
+private slots:
+    void typeChanged(const QModelIndex &);
+    void sizeChanged(const QString& id, int size);
+    void treeSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
+    void pressEnter(int index);
+    void errorOpenDatabase();
+
 private:
     void parseTableScheme();
     void updateTables(TreeItem* item);
@@ -45,11 +53,5 @@ private:
     TableModel* mTableType2 = nullptr;
     /// модель таблицы типа 3
     TableModel* mTableType3 = nullptr;
-private slots:
-    void typeChanged(const QModelIndex &);
-    void sizeChanged(const QString& id, int size);
-    void treeSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
-    void pressEnter(int index);
-    void errorOpenDatabase();
 };
 

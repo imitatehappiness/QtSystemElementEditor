@@ -4,8 +4,7 @@
  * \param parent родитель
  */
 SpinDelegate::SpinDelegate(QObject *parent):
-    QItemDelegate(parent)
-{
+    QItemDelegate(parent){
 
 }
 

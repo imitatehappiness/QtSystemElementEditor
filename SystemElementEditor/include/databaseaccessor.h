@@ -16,8 +16,11 @@ public:
     static DatabaseAccessor* getInstance();
     QVector<QVector<QVariant>> executeSqlQuery();
     void setQuery(const QString &query);
+    bool executeUpdateQuery();
+
 signals:
     void errorOpenDataBase();
+
 private:
     DatabaseAccessor();
     DatabaseAccessor(const DatabaseAccessor& );

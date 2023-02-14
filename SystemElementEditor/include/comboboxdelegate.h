@@ -20,11 +20,13 @@ public:
     void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
     void setItems(QStringList &texts);
+
 signals:
     /// сигнал нажатия на элемент в списке combobox
     void activatedComboBox(int index);
+
 private:
     /// список элементов combobox
-    QStringList texts;
+    QStringList mTexts;
 };
 

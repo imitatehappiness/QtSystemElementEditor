@@ -59,6 +59,12 @@ void DatabaseAccessor::setQuery(const QString &query){
     mQuery = query;
 }
 
+bool DatabaseAccessor::executeUpdateQuery(){
+    QSqlQuery sqlQuery(DatabaseAccessor::getInstance()->mDBPtr);
+    return sqlQuery.exec(DatabaseAccessor::getInstance()->mQuery);
+
+}
+
 
 
 

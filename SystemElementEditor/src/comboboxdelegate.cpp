@@ -5,7 +5,7 @@
  */
 ComboBoxDelegate::ComboBoxDelegate (QObject *parent)
     : QItemDelegate(parent){
-    texts << "Тип 2" << "Тип 3";
+    mTexts << "Тип 2" << "Тип 3";
 }
 
 /*!
@@ -19,7 +19,7 @@ ComboBoxDelegate::~ComboBoxDelegate(){
  * \param item список элементов combobox
  */
 void ComboBoxDelegate::setItems(QStringList &item) {
-    texts = item;
+    mTexts = item;
 }
 
 /*!
@@ -32,7 +32,7 @@ void ComboBoxDelegate::setItems(QStringList &item) {
  */
 QWidget* ComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const{
     QComboBox *editor = new QComboBox(parent);
-    editor->addItems(texts);
+    editor->addItems(mTexts);
     return editor;
 }
 
@@ -64,7 +64,7 @@ void ComboBoxDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, 
     if(comboBox == nullptr){
         return;
     }
-    QString text = QString::number(comboBox->currentIndex() + texts.size());
+    QString text = QString::number(comboBox->currentIndex() + mTexts.size());
     model->setData(index, text, Qt::EditRole);
 }
 
