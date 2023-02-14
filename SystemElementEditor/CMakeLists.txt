@@ -22,13 +22,13 @@ set(FORMS_DIR "${CMAKE_SOURCE_DIR}/forms")
 set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
 set(SOURCE_DIR "${CMAKE_SOURCE_DIR}/src")
 set(CONFIGS_DIR "${CMAKE_SOURCE_DIR}/configs")
-set(RESOURSES_DIR "${CMAKE_SOURCE_DIR}/resourses")
+set(RESOURCES_DIR "${CMAKE_SOURCE_DIR}/resources")
 
 include_directories(${FORMS_DIR})
 include_directories(${INCLUDE_DIR})
 include_directories(${SOURCE_DIR})
 include_directories(${CONFIGS_DIR})
-include_directories(${RESOURSES_DIR})
+include_directories(${RESOURCES_DIR})
 
 file(GLOB_RECURSE SOURCES
     "${FORMS_DIR}/*.ui"
@@ -36,7 +36,7 @@ file(GLOB_RECURSE SOURCES
     "${INCLUDE_DIR}/*.h"
     "${SOURCE_DIR}/*.cpp"
     "${CONFIGS_DIR}/*.ini"
-    "${RESOURSES_DIR}/*.qrc"
+    "${RESOURCES_DIR}/*.qrc"
 )
 
 #=================== SETUP EXECTUABLE ====================#
@@ -60,7 +60,7 @@ target_include_directories(SystemElementEditor PRIVATE ${FORMS_DIR})
 target_include_directories(SystemElementEditor PRIVATE ${INCLUDE_DIR})
 target_include_directories(SystemElementEditor PRIVATE ${SOURCE_DIR})
 target_include_directories(SystemElementEditor PRIVATE ${CONFIGS_DIR})
-target_include_directories(SystemElementEditor PRIVATE ${RESOURSES_DIR})
+target_include_directories(SystemElementEditor PRIVATE ${RESOURCES_DIR})
 
 #===================== LINKING LIBRARIES =======================#
 target_link_libraries(SystemElementEditor Qt5::Widgets)
