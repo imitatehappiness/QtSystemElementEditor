@@ -7,14 +7,12 @@
 #include <QKeyEvent>
 
 #include "databaseaccessor.h"
-
-class TreeModel;
-class TreeItem;
-class ComboBoxDelegate;
-class TableModel;
-class TableItem;
-class SpinDelegate;
-
+#include "treeitem.h"
+#include "treemodel.h"
+#include "comboboxdelegate.h"
+#include "spindelegate.h"
+#include "tablemodel.h"
+#include "tableitem.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class SystemElementEditor; }
@@ -35,8 +33,6 @@ private slots:
     void sizeChanged(const QString& id, int size);
     void treeSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
     void pressEnter(int index);
-    void errorOpenDatabase();
-
 private:
     void parseTableScheme();
     void updateTables(TreeItem* item);

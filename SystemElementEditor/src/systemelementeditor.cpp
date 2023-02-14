@@ -1,12 +1,7 @@
 #include "systemelementeditor.h"
 #include "./ui_systemelementeditor.h"
 
-#include "treeitem.h"
-#include "treemodel.h"
-#include "comboboxdelegate.h"
-#include "spindelegate.h"
-#include "tablemodel.h"
-#include "tableitem.h"
+#include <QMessageBox>
 
 /*!
  * \brief SystemElementEditor::SystemElementEditor констуктор
@@ -19,6 +14,10 @@ SystemElementEditor::SystemElementEditor(QWidget *parent)
     , ui(new Ui::SystemElementEditor)
 {
     ui->setupUi(this);
+
+    if(!DatabaseAccessor::getInstance()->isOpen){
+        QMessageBox::warning(this, "Внимание", "Ошибка подключения к Базе Данных \n");
+    }
 
     ui->l_systemComposition->setText("<strong>Состав системы:</strong>");
     ui->l_type2->setText("<strong>Элементы \"Тип 2\":</strong>");
@@ -61,8 +60,6 @@ SystemElementEditor::SystemElementEditor(QWidget *parent)
     connect(mTableType2,SIGNAL(sizeChanged(const QString&, int)), this, SLOT(sizeChanged(const QString&, int)));
     connect(mTableType3,SIGNAL(sizeChanged(const QString&, int)), this, SLOT(sizeChanged(const QString&, int)));
     connect(mComboBoxDelegate, SIGNAL(activatedComboBox(int)), this, SLOT(pressEnter(int)));
-    connect(DatabaseAccessor::getInstance(), SIGNAL(errorOpenDataBase()), this, SLOT(errorOpenDatabase()));
-
 }
 
 /*!
@@ -101,6 +98,7 @@ void SystemElementEditor::sizeChanged(const QString &id, int size){
         if(id == item->getDataByIndex(TREE_ITEM_ID).toString()){
             item->setData(TREE_ITEM_SIZE, size);
             mTreeModel->changeSize(mTreeModel->getRoot(), id, size);
+            break;
         }
     }
 }
@@ -150,11 +148,6 @@ void SystemElementEditor::treeSelectionChanged(const QItemSelection& /*selected*
 void SystemElementEditor::pressEnter(int /*index*/){
     ui->treeView_systemComposition->setFocus();
     QApplication::sendEvent(ui->treeView_systemComposition, new QKeyEvent(QEvent::KeyPress, Qt::Key_Enter, Qt::NoModifier));
-}
-
-#include <QMessageBox>
-void SystemElementEditor::errorOpenDatabase(){
-    QMessageBox::warning(this, "Внимание","Ошибка открытия Базы Данных");
 }
 
 /*!

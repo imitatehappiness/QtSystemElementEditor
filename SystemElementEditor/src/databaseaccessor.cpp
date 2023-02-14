@@ -1,6 +1,7 @@
 #include "databaseaccessor.h"
 
 QSqlDatabase DatabaseAccessor::mDBPtr;
+bool DatabaseAccessor::isOpen;
 
 /*!
  * \brief DatabaseAccessor::DatabaseAccessor конструктор
@@ -9,16 +10,17 @@ QSqlDatabase DatabaseAccessor::mDBPtr;
  * \details по хорошему нужно было переписать на потоки
  */
 DatabaseAccessor::DatabaseAccessor(){
+    isOpen = true;
     QString pathConfig = QDir::currentPath();
     QSettings settings(pathConfig.left(pathConfig.lastIndexOf(QChar('/'))) + "/SystemElementEditor/configs/config.ini", QSettings::IniFormat);
-
     mDBPtr = QSqlDatabase::addDatabase(settings.value("CONNECT/DatabaseType").toString());
     mDBPtr.setHostName(settings.value("CONNECT/HostName").toString());
     mDBPtr.setDatabaseName(settings.value("CONNECT/DatabaseName").toString());
     mDBPtr.setUserName(settings.value("CONNECT/UserName").toString());
     mDBPtr.setPassword(settings.value("CONNECT/Password").toString());
     if (!mDBPtr.open()){
-        emit errorOpenDataBase();
+        qDebug() << "error open Database";
+        isOpen = false;
     }
 }
 
@@ -62,7 +64,6 @@ void DatabaseAccessor::setQuery(const QString &query){
 bool DatabaseAccessor::executeUpdateQuery(){
     QSqlQuery sqlQuery(DatabaseAccessor::getInstance()->mDBPtr);
     return sqlQuery.exec(DatabaseAccessor::getInstance()->mQuery);
-
 }
 
 

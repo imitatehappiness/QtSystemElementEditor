@@ -23,7 +23,6 @@ int main(int argc, char *argv[])
     if (styleQSS.length()==0){
         qDebug()<<"Error appstyles.qss reading";
     }
-
     a.setStyleSheet(styleQSS);
 
     SystemElementEditor w;

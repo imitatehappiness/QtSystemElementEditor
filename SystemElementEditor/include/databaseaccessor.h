@@ -17,10 +17,8 @@ public:
     QVector<QVector<QVariant>> executeSqlQuery();
     void setQuery(const QString &query);
     bool executeUpdateQuery();
-
-signals:
-    void errorOpenDataBase();
-
+public:
+    static bool isOpen;
 private:
     DatabaseAccessor();
     DatabaseAccessor(const DatabaseAccessor& );
