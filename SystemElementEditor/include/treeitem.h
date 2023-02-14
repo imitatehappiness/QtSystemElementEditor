@@ -1,11 +1,7 @@
-#ifndef TREEITEM_H
-#define TREEITEM_H
+#pragma once
 
-#include <QVariant>
-#include <QVector>
 #include <QDebug>
-#include <QFont>
-#include <comboboxdelegate.h>
+#include "comboboxdelegate.h"
 
 /*!
  * \enum TreeData
@@ -21,7 +17,7 @@ enum TreeData{
     TREE_ITEM_TYPE,
     TREE_ITEM_ID,
     TREE_ITEM_ID_UP,
-    TREE_ITEM_SIZE
+    TREE_ITEM_SIZE,
 };
 
 /*!
@@ -37,7 +33,7 @@ public:
     int childCount() const;
     int columnCount() const;
     TreeItem *getParent() const;
-    QVector<TreeItem*> getChildrens() const;
+    QVector<TreeItem*> getChildren() const;
     void addChild(TreeItem* item);
     QVariant getFont(int column);
     TreeItem* getItem(int row) const;
@@ -48,11 +44,9 @@ public:
     void setParent(TreeItem *parent);
 private:
     /// родитель
-    TreeItem* mParent;
+    TreeItem* mParent = nullptr;
     /// список потомков
-    QVector<TreeItem*> mChildrens;
+    QVector<TreeItem*> mChildren;
     /// список данных элементов
-    QVector<QVariant> mData;
+    QVector<QVariant> mData;   
 };
-
-#endif // TREEITEM_H

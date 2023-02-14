@@ -1,11 +1,10 @@
-#ifndef TABLEMODEL_H
-#define TABLEMODEL_H
-
+#pragma once
 
 #include <QAbstractTableModel>
 #include <QDebug>
-#include <tableitem.h>
-#include <databaseaccessor.h>
+
+#include "tableitem.h"
+#include "databaseaccessor.h"
 
 /*!
  * \class TableModel
@@ -38,4 +37,3 @@ private:
     QVector<TableItem*> mItems;
 };
 
-#endif // TABLEMODEL_H

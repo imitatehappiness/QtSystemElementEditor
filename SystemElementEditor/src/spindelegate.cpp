@@ -23,9 +23,7 @@ SpinDelegate::~SpinDelegate(){
  * \param index неиспользуемый параметр
  * \return редактор, который будет использоваться для редактирования элемента данных с заданным индексом.
  */
-QWidget *SpinDelegate::createEditor(QWidget *parent,const QStyleOptionViewItem& option, const QModelIndex & index) const{
-    Q_UNUSED(option);
-    Q_UNUSED(index);
+QWidget *SpinDelegate::createEditor(QWidget *parent,const QStyleOptionViewItem& /*option*/, const QModelIndex& /*index*/) const{
     QSpinBox *editor = new QSpinBox(parent);
 
     editor->setRange(INT_MIN, INT_MAX);
@@ -41,6 +39,9 @@ QWidget *SpinDelegate::createEditor(QWidget *parent,const QStyleOptionViewItem& 
 void SpinDelegate::setEditorData(QWidget* editor,const QModelIndex& index) const{
     int value =index.model()->data(index).toInt();
     QSpinBox *box = static_cast<QSpinBox*>(editor);
+    if(box == nullptr){
+        return;
+    }
     box->setValue(value);
 }
 
@@ -52,6 +53,9 @@ void SpinDelegate::setEditorData(QWidget* editor,const QModelIndex& index) const
  */
 void SpinDelegate::setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const{
     QSpinBox *box = static_cast<QSpinBox*>(editor);
+    if(box == nullptr){
+        return;
+    }
     int value = box->value();
     model->setData(index, value);
 }

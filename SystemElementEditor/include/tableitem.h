@@ -1,10 +1,7 @@
-#ifndef TTABLEITEM_H
-#define TTABLEITEM_H
+#pragma once
 
-#include <QVariant>
 #include <QVector>
-#include <QDebug>
-#include <QColor>
+#include <QVariant>
 
 /*!
  * \enum TableData
@@ -35,4 +32,3 @@ private:
     QVector<QVariant> mData;
 };
 
-#endif // TTABLEITEM_H

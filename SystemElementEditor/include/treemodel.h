@@ -1,12 +1,11 @@
-#ifndef TREEMODEL_H
-#define TREEMODEL_H
+#pragma once
 
 #include <QAbstractItemModel>
 #include <QModelIndex>
-#include <QVariant>
-#include <treeitem.h>
-#include <comboboxdelegate.h>
-#include <databaseaccessor.h>
+
+#include "treeitem.h"
+#include "comboboxdelegate.h"
+#include "databaseaccessor.h"
 
 /*!
  * \class TreeModel
@@ -24,7 +23,6 @@ public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role) const override;
-    void addChild(const QModelIndex &indexParent, TreeItem*);
 
     TreeItem* getRoot() const;
     TreeItem* itemByIndex(const QModelIndex &index) const;
@@ -43,5 +41,3 @@ private:
     /// корень дерева
     TreeItem* mRoot;
 };
-
-#endif // TREEMODEL_H

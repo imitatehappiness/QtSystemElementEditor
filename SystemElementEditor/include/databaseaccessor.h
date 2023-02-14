@@ -1,14 +1,8 @@
-#ifndef DATABASEACCESSOR_H
-#define DATABASEACCESSOR_H
+#pragma once
 
-#include <QString>
 #include <QtSql>
-#include <QSqlQuery>
-#include <QDir>
-#include <QComboBox>
-#include <QSettings>
-#include <QString>
-#include <treeitem.h>
+
+#include "treeitem.h"
 
 /*!
  * \class DatabaseAccessor
@@ -22,6 +16,8 @@ public:
     static DatabaseAccessor* getInstance();
     QVector<QVector<QVariant>> executeSqlQuery();
     void setQuery(const QString &query);
+signals:
+    void errorOpenDataBase();
 private:
     DatabaseAccessor();
     DatabaseAccessor(const DatabaseAccessor& );
@@ -32,6 +28,3 @@ private:
     QString mQuery;
 
 };
-
-
-#endif // DATABASEACCESSOR_H

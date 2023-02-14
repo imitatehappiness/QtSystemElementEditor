@@ -1,5 +1,4 @@
-#ifndef COMBOBOXDELEGATE_H
-#define COMBOBOXDELEGATE_H
+#pragma once
 
 #include <QItemDelegate>
 #include <QComboBox>
@@ -29,4 +28,3 @@ private:
     QStringList texts;
 };
 
-#endif // COMBOBOXDELEGATE_H

@@ -3,8 +3,6 @@
 #include <QApplication>
 #include <QProxyStyle>
 #include <QStyleFactory>
-#include <QFile>
-#include <QDir>
 #include <QDebug>
 
 const QString FONT_FAMILY_APP = "Times";

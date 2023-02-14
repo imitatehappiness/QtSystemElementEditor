@@ -1,10 +1,9 @@
-#ifndef SPINDELEGATE_H
-#define SPINDELEGATE_H
+#pragma once
 
 #include <QItemDelegate>
 #include <QSpinBox>
-#include <QPalette>
-#include <tableitem.h>
+
+#include "tableitem.h"
 
 /*!
  * \class SpinDelegate
@@ -22,4 +21,3 @@ public:
     void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 
-#endif // SPINDELEGATE_H

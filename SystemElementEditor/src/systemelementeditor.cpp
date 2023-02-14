@@ -1,7 +1,12 @@
 #include "systemelementeditor.h"
 #include "./ui_systemelementeditor.h"
 
-#include <QKeyEvent>
+#include "treeitem.h"
+#include "treemodel.h"
+#include "comboboxdelegate.h"
+#include "spindelegate.h"
+#include "tablemodel.h"
+#include "tableitem.h"
 
 /*!
  * \brief SystemElementEditor::SystemElementEditor констуктор
@@ -19,10 +24,11 @@ SystemElementEditor::SystemElementEditor(QWidget *parent)
     ui->l_type2->setText("<strong>Элементы \"Тип 2\":</strong>");
     ui->l_type3->setText("<strong>Элементы \"Тип 3\":</strong>");
 
-    parseTableShema();
+    parseTableScheme();
 
     /// tree
     mTreeModel = new TreeModel();
+
     mTreeModel->setupModelData(mTreeItems);
     ui->treeView_systemComposition->setModel(mTreeModel);
 
@@ -55,6 +61,8 @@ SystemElementEditor::SystemElementEditor(QWidget *parent)
     connect(mTableType2,SIGNAL(sizeChanged(const QString&, int)), this, SLOT(sizeChanged(const QString&, int)));
     connect(mTableType3,SIGNAL(sizeChanged(const QString&, int)), this, SLOT(sizeChanged(const QString&, int)));
     connect(mComboBoxDelegate, SIGNAL(activatedComboBox(int)), this, SLOT(pressEnter(int)));
+    connect(DatabaseAccessor::getInstance(), SIGNAL(errorOpenDataBase()), this, SLOT(errorOpenDatabase()));
+
 }
 
 /*!
@@ -76,8 +84,10 @@ SystemElementEditor::~SystemElementEditor(){
  */
 void SystemElementEditor::typeChanged(const QModelIndex &index){
     TreeItem* item = static_cast<TreeItem*>(index.internalPointer());
-    if(item->getParent()->getDataByIndex(TREE_ITEM_ID) == mTableType2->getParentId()){
-        updateTables(item->getParent());
+    if(item != nullptr){
+        if(item->getParent()->getDataByIndex(TREE_ITEM_ID) == mTableType2->getParentId()){
+            updateTables(item->getParent());
+        }
     }
 }
 
@@ -87,9 +97,6 @@ void SystemElementEditor::typeChanged(const QModelIndex &index){
  * \param size новые размер элемента
  */
 void SystemElementEditor::sizeChanged(const QString &id, int size){
-    ui->tableView_type2->clearSelection();
-    ui->tableView_type3->clearSelection();
-    ui->treeView_systemComposition->setFocus();
     for(auto &item : mTreeItems){
         if(id == item->getDataByIndex(TREE_ITEM_ID).toString()){
             item->setData(TREE_ITEM_SIZE, size);
@@ -99,14 +106,20 @@ void SystemElementEditor::sizeChanged(const QString &id, int size){
 }
 
 /*!
- * \brief SystemElementEditor::parseTableShema формирование списка элементов из таблицы schema
+ * \brief SystemElementEditor::parseTableScheme формирование списка элементов из таблицы schema
  */
-void SystemElementEditor::parseTableShema(){
-    DatabaseAccessor::getInstance()->setQuery("SELECT * FROM schema");
+void SystemElementEditor::parseTableScheme(){
+    DatabaseAccessor::getInstance()->setQuery("SELECT id, id_up, type, name, size FROM scheme");
     QVector<QVector<QVariant>> result = DatabaseAccessor::getInstance()->executeSqlQuery();
 
     for(int i = 0; i < result.size(); i++){
-        QVector<QVariant> itemData{result[i][3].toString(), result[i][2].toInt(), result[i][0].toString(), result[i][1].toString(), result[i][4].toInt()};
+        QString name    = result[i][3].toString();
+        QString id      = result[i][0].toString();
+        QString id_up   = result[i][1].toString();
+        int type        = result[i][2].toInt();
+        int size        = result[i][4].toInt();
+
+        QVector<QVariant> itemData{name, type, id, id_up, size};
         TreeItem* item = new TreeItem(itemData);
         mTreeItems.append(item);
     }
@@ -117,15 +130,12 @@ void SystemElementEditor::parseTableShema(){
  * \param selected неиспользуемый параметр
  * \param deselected неиспользуемый параметр
  */
-void SystemElementEditor::treeSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected){
-    Q_UNUSED(selected)
-    Q_UNUSED(deselected)
-
+void SystemElementEditor::treeSelectionChanged(const QItemSelection& /*selected*/, const QItemSelection& /*deselected*/){
     QItemSelectionModel *selections = ui->treeView_systemComposition->selectionModel();
     QModelIndexList indexes = selections->selectedIndexes();
     for(QModelIndex index : indexes){
         TreeItem* item = static_cast<TreeItem*>(index.internalPointer());
-        if (item){
+        if (item != nullptr){
             updateTables(item);
         }
     }
@@ -137,10 +147,14 @@ void SystemElementEditor::treeSelectionChanged(const QItemSelection &selected, c
  *
  * \details без SystemElementEditor::pressEnter после изменения типа необходимо было нажимать мышью в любой участок формы или нажимать Enter самостоятельно
  */
-void SystemElementEditor::pressEnter(int index){
-    Q_UNUSED(index);
+void SystemElementEditor::pressEnter(int /*index*/){
     ui->treeView_systemComposition->setFocus();
     QApplication::sendEvent(ui->treeView_systemComposition, new QKeyEvent(QEvent::KeyPress, Qt::Key_Enter, Qt::NoModifier));
+}
+
+#include <QMessageBox>
+void SystemElementEditor::errorOpenDatabase(){
+    QMessageBox::warning(this, "Внимание","Ошибка открытия Базы Данных");
 }
 
 /*!
@@ -148,7 +162,7 @@ void SystemElementEditor::pressEnter(int index){
  * \param item родитель элементов таблиц
  */
 void SystemElementEditor::updateTables(TreeItem *item){
-    if (item && item->childCount() != 0){
+    if (item && item->getDataByIndex(TREE_ITEM_TYPE).toInt() == 1){
         mTableType2->clearModel();
         mTableType3->clearModel();
         mTableType2->setupModelData(item, 2);

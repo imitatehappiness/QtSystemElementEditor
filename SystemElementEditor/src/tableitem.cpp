@@ -7,8 +7,7 @@
  * \details инициализирует элемент, присваивая список данных
  */
 TableItem::TableItem(const QVector<QVariant> &data)
-    : mData(data)
-{
+    : mData(data){
 
 }
 

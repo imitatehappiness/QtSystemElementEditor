@@ -6,16 +6,14 @@
  * \param parent родитель
  */
 TreeItem::TreeItem(const QVector<QVariant> &data, TreeItem *parent)
-    : mData(data), mParent(parent)
-{
-
+    : mData(data), mParent(parent){
 }
 
 /*!
  * \brief TreeItem::~TreeItem деструктор
  */
 TreeItem::~TreeItem(){
-    qDeleteAll(mChildrens);
+    qDeleteAll(mChildren);
 }
 
 /*!
@@ -24,10 +22,10 @@ TreeItem::~TreeItem(){
  * \return потомок
  */
 TreeItem *TreeItem::child(int row){
-    if (row < 0 || row >= mChildrens.size()){
+    if (row < 0 || row >= mChildren.size()){
         return nullptr;
     }
-    return mChildrens[row];
+    return mChildren[row];
 }
 
 /*!
@@ -35,7 +33,7 @@ TreeItem *TreeItem::child(int row){
  * \return индекс элемента в списке потомков родителя
  */
 int TreeItem::row() const{
-    return mParent != nullptr ? mParent->mChildrens.indexOf(const_cast<TreeItem*>(this)) : 0;
+    return mParent != nullptr ? mParent->mChildren.indexOf(const_cast<TreeItem*>(this)) : 0;
 }
 
 /*!
@@ -43,7 +41,7 @@ int TreeItem::row() const{
  * \return количество потомков
  */
 int TreeItem::childCount() const{
-    return mChildrens.size();
+    return mChildren.size();
 }
 
 /*!
@@ -63,19 +61,19 @@ TreeItem* TreeItem::getParent() const{
 }
 
 /*!
- * \brief TreeItem::getChildrens получение списка потомков элемента
+ * \brief TreeItem::getChildren получение списка потомков элемента
  * \return список потомков
  */
-QVector<TreeItem*> TreeItem::getChildrens() const{
-    return mChildrens;
+QVector<TreeItem*> TreeItem::getChildren() const{
+    return mChildren;
 }
 
 /*!
  * \brief TreeItem::addChild добавление нового элемента в список потомков
  * \param item элемент, который необходимо добавить
  */
-void TreeItem::addChild(TreeItem *item){
-    mChildrens.append(item);
+void TreeItem::addChild(TreeItem* item){
+    mChildren.append(item);
 }
 
 /*!
@@ -84,7 +82,7 @@ void TreeItem::addChild(TreeItem *item){
  * \return жирный шрифт, если элемент является контейнером иначе QVariant()
  */
 QVariant TreeItem::getFont(int column){
-    if (column == TREE_ITEM_NAME && mChildrens.size()!=0){
+    if (column == TREE_ITEM_NAME && mData[TREE_ITEM_TYPE].toInt() == 1){
         QFont font;
         font.setBold(true);
         return font;

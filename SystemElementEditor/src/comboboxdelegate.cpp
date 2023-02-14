@@ -44,10 +44,12 @@ QWidget* ComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionViewI
 void ComboBoxDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const{
     QString text = index.model()->data(index, Qt::EditRole).toString();
     QComboBox *comboBox = static_cast<QComboBox*>(editor);
+    if(comboBox == nullptr){
+        return;
+    }
     connect(comboBox,SIGNAL(activated(int)), SIGNAL(activatedComboBox(int)));
 
     int tindex = comboBox->findText(text);
-    comboBox->setProperty("type", tindex + 2);
     comboBox->setCurrentIndex(tindex);
 }
 
@@ -59,7 +61,10 @@ void ComboBoxDelegate::setEditorData(QWidget *editor, const QModelIndex &index) 
  */
 void ComboBoxDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const{
     QComboBox *comboBox = static_cast<QComboBox*>(editor);
-    QString text = comboBox->currentText();
+    if(comboBox == nullptr){
+        return;
+    }
+    QString text = QString::number(comboBox->currentIndex() + texts.size());
     model->setData(index, text, Qt::EditRole);
 }
 

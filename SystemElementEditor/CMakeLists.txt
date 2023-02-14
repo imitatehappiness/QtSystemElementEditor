@@ -49,7 +49,7 @@ set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS
 set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${FORMS_DIR})
 
 # Add the executable
-if (WIN32) 
+if (WIN32)
     add_executable(SystemElementEditor WIN32 ${SOURCES})
 elseif(UNIX)
     add_executable(SystemElementEditor ${SOURCES})

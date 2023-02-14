@@ -20,8 +20,7 @@ TableModel::~TableModel(){
  * \param parentIndex модельный индекс элемента
  * \return количество строк
  */
-int TableModel::rowCount(const QModelIndex& parent) const {
-    Q_UNUSED(parent)
+int TableModel::rowCount(const QModelIndex&/* parent*/) const {
     return mItems.size();
 }
 
@@ -32,8 +31,7 @@ int TableModel::rowCount(const QModelIndex& parent) const {
  *
  * \details количество столбцов всегда равняется 2
  */
-int TableModel::columnCount( const QModelIndex& parent) const {
-    Q_UNUSED(parent)
+int TableModel::columnCount( const QModelIndex&/* parent*/) const {
     return 2;
 }
 
@@ -89,8 +87,9 @@ bool TableModel::setData(const QModelIndex &index, const QVariant &value, int ro
     QString size = mItems[index.row()]->getDataByIndex(TABLE_ITEM_SIZE).toString();
     QString id = mItems[index.row()]->getDataByIndex(TABLE_ITEM_ID).toString();
     emit sizeChanged(id, size.toInt());
-
-    QString query = "UPDATE schema SET size=" + size + " WHERE id='" +id + "'";
+    auto query = QString( "UPDATE scheme SET size=%1 WHERE id='%2';" )
+         .arg(size)
+         .arg(id);
     QVector<QVector<QVariant>> resultSqlQuery;
     DatabaseAccessor::getInstance()->setQuery(query);
     resultSqlQuery = DatabaseAccessor::getInstance()->executeSqlQuery();
@@ -154,12 +153,12 @@ void TableModel::addItem(TableItem* item) {
  */
 void TableModel::setupModelData(TreeItem *root, int type){
     parentId = root->getDataByIndex(TREE_ITEM_ID).toString();
-    for (auto &item : root->getChildrens()){
+    for (auto &item : root->getChildren()){
 
         if(item->childCount() != 0){
             continue;
         }
-        int currentType = item->getDataByIndex(TREE_ITEM_TYPE).toString().section(' ', 1).toInt();
+        int currentType = item->getDataByIndex(TREE_ITEM_TYPE).toInt();
         if(type == currentType){
 
             QVector<QVariant> data;

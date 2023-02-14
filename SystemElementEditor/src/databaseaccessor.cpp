@@ -18,7 +18,7 @@ DatabaseAccessor::DatabaseAccessor(){
     mDBPtr.setUserName(settings.value("CONNECT/UserName").toString());
     mDBPtr.setPassword(settings.value("CONNECT/Password").toString());
     if (!mDBPtr.open()){
-        qDebug() << "Database not open";
+        emit errorOpenDataBase();
     }
 }
 

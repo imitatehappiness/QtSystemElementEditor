@@ -1,28 +1,20 @@
-/*!
- * \file
- * \brief Заголовочный файл SystemElementEditor
- */
-#ifndef SYSTEMELEMENTEDITOR_H
-#define SYSTEMELEMENTEDITOR_H
+#pragma once
 
 #include <QMainWindow>
-#include <QString>
-#include <QDebug>
-#include <QMap>
-#include <QtSql/QSqlDatabase>
-#include <QtSql/QSqlQuery>
-#include <QDir>
-#include <QSettings>
-#include <QVariant>
+#include <QtSql>
 #include <QStandardItemModel>
 #include <QHeaderView>
-#include <treeitem.h>
-#include <treemodel.h>
-#include <comboboxdelegate.h>
-#include <spindelegate.h>
-#include <databaseaccessor.h>
-#include <tablemodel.h>
-#include <tableitem.h>
+#include <QKeyEvent>
+
+#include "databaseaccessor.h"
+
+class TreeModel;
+class TreeItem;
+class ComboBoxDelegate;
+class TableModel;
+class TableItem;
+class SpinDelegate;
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class SystemElementEditor; }
@@ -38,26 +30,26 @@ public:
     explicit SystemElementEditor(QWidget *parent = nullptr);
     ~SystemElementEditor();
 private:
-    void parseTableShema();
+    void parseTableScheme();
     void updateTables(TreeItem* item);
     Ui::SystemElementEditor *ui;
     /// список элементов таблицы schema
     QVector<TreeItem*> mTreeItems;
     /// модель дерева
-    TreeModel* mTreeModel;
+    TreeModel* mTreeModel = nullptr;
     /// делегат combobox
-    ComboBoxDelegate* mComboBoxDelegate;
+    ComboBoxDelegate* mComboBoxDelegate = nullptr;
     /// делегат spinbox
-    SpinDelegate* mSpinDelegate;
+    SpinDelegate* mSpinDelegate = nullptr;
     /// модель таблицы типа 2
-    TableModel* mTableType2;
+    TableModel* mTableType2 = nullptr;
     /// модель таблицы типа 3
-    TableModel* mTableType3;
+    TableModel* mTableType3 = nullptr;
 private slots:
     void typeChanged(const QModelIndex &);
     void sizeChanged(const QString& id, int size);
     void treeSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
     void pressEnter(int index);
+    void errorOpenDatabase();
 };
 
-#endif // SYSTEMELEMENTEDITOR_H
