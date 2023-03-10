@@ -8,7 +8,6 @@
  */
 TableItem::TableItem(const QVector<QVariant> &data)
     : mData(data){
-
 }
 
 TableItem::~TableItem(){

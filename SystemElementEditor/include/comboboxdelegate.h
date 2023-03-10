@@ -1,8 +1,6 @@
 #pragma once
 
 #include <QItemDelegate>
-#include <QComboBox>
-#include <QDebug>
 
 /*!
  * \class ComboBoxDelegate

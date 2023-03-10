@@ -1,5 +1,7 @@
 #include "databaseaccessor.h"
 
+#include <QMessageBox>
+
 QSqlDatabase DatabaseAccessor::mDBPtr;
 bool DatabaseAccessor::isOpen;
 
@@ -19,7 +21,11 @@ DatabaseAccessor::DatabaseAccessor(){
     mDBPtr.setUserName(settings.value("CONNECT/UserName").toString());
     mDBPtr.setPassword(settings.value("CONNECT/Password").toString());
     if (!mDBPtr.open()){
-        qDebug() << "error open Database";
+        QMessageBox mBox;
+        mBox.setIcon(QMessageBox::Warning);
+        mBox.setText("Error open database!");
+        mBox.setButtonText(QMessageBox::Ok, "Ok");
+        mBox.exec();
         isOpen = false;
     }
 }

@@ -2,7 +2,9 @@
 
 #include <QtSql>
 
-#include "treeitem.h"
+QT_BEGIN_NAMESPACE
+class TableItem;
+QT_END_NAMESPACE
 
 /*!
  * \class DatabaseAccessor

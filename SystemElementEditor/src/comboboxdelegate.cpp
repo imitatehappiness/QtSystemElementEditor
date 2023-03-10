@@ -1,4 +1,7 @@
 #include "comboboxdelegate.h"
+
+#include <QComboBox>
+
 /*!
  * \brief ComboBoxDelegate::ComboBoxDelegate конструктор
  * \param parent родитель

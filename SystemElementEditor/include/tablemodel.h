@@ -1,10 +1,12 @@
 #pragma once
 
 #include <QAbstractTableModel>
-#include <QDebug>
 
-#include "tableitem.h"
-#include "databaseaccessor.h"
+QT_BEGIN_NAMESPACE
+class TableItem;
+class TreeItem;
+class DatabaseAccessor;
+QT_END_NAMESPACE
 
 /*!
  * \class TableModel

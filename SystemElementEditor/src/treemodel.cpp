@@ -1,13 +1,14 @@
 #include "treemodel.h"
+
 #include "treeitem.h"
+#include "databaseaccessor.h"
 
 /*!
  * \brief TreeModel::TreeModel констуктор
  * \param parent родитель
  */
 TreeModel::TreeModel(QObject *parent)
-    : QAbstractItemModel(parent)
-{
+    : QAbstractItemModel(parent){
     mRoot = new TreeItem({tr("Наименование"), tr("Тип"), tr("Идентификатор элемента"), tr("Идентификатор родительского элемента"), tr("Размер")});
 }
 

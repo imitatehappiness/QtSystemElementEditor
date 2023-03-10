@@ -1,18 +1,19 @@
 #pragma once
 
+#include <QItemSelection>
 #include <QMainWindow>
-#include <QtSql>
-#include <QStandardItemModel>
-#include <QHeaderView>
-#include <QKeyEvent>
 
-#include "databaseaccessor.h"
-#include "treeitem.h"
-#include "treemodel.h"
-#include "comboboxdelegate.h"
-#include "spindelegate.h"
-#include "tablemodel.h"
-#include "tableitem.h"
+QT_BEGIN_NAMESPACE
+class TreeItem;
+class TreeModel;
+class TableItem;
+class TableModel;
+class ComboBoxDelegate;
+class SpinDelegate;
+class ComboBoxDelegate;
+class DatabaseAccessor;
+QT_END_NAMESPACE
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class SystemElementEditor; }

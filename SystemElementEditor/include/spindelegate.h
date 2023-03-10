@@ -1,9 +1,10 @@
 #pragma once
 
 #include <QItemDelegate>
-#include <QSpinBox>
 
-#include "tableitem.h"
+QT_BEGIN_NAMESPACE
+class TableItem;
+QT_END_NAMESPACE
 
 /*!
  * \class SpinDelegate

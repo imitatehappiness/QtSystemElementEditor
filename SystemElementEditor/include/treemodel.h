@@ -3,9 +3,11 @@
 #include <QAbstractItemModel>
 #include <QModelIndex>
 
-#include "treeitem.h"
-#include "comboboxdelegate.h"
-#include "databaseaccessor.h"
+QT_BEGIN_NAMESPACE
+class TreeItem;
+class ComboBoxDelegate;
+class DatabaseAccessor;
+QT_END_NAMESPACE
 
 /*!
  * \class TreeModel

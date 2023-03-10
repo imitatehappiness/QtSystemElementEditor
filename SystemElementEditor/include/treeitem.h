@@ -1,7 +1,11 @@
 #pragma once
 
-#include <QDebug>
-#include "comboboxdelegate.h"
+#include <QVector>
+#include <QVariant>
+
+QT_BEGIN_NAMESPACE
+class ComboBoxDelegate;
+QT_END_NAMESPACE
 
 /*!
  * \enum TreeData

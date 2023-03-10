@@ -1,11 +1,18 @@
 #include <tablemodel.h>
 
+#include <QFont>
+#include <QBrush>
+
+#include <tableitem.h>
+#include <treeitem.h>
+#include <databaseaccessor.h>
+
 /*!
  * \brief TableModel::TableModel конструктор
  * \param parent родитель
  */
 TableModel::TableModel(QObject* parent) :
-    QAbstractTableModel(parent) {
+    QAbstractTableModel(parent){
 }
 
 /*!

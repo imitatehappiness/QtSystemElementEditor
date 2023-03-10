@@ -1,3 +1,5 @@
+#include <QSpinBox>
+
 #include "spindelegate.h"
 /*!
  * \brief SpinDelegate::SpinDelegate конструктор

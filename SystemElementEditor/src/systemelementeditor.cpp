@@ -2,6 +2,17 @@
 #include "./ui_systemelementeditor.h"
 
 #include <QMessageBox>
+#include <QtSql>
+#include <QHeaderView>
+#include <QKeyEvent>
+
+#include <databaseaccessor.h>
+#include <treeitem.h>
+#include <treemodel.h>
+#include <tableitem.h>
+#include <tablemodel.h>
+#include <comboboxdelegate.h>
+#include <spindelegate.h>
 
 /*!
  * \brief SystemElementEditor::SystemElementEditor констуктор
@@ -11,8 +22,8 @@
  */
 SystemElementEditor::SystemElementEditor(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::SystemElementEditor)
-{
+    , ui(new Ui::SystemElementEditor){
+
     ui->setupUi(this);
 
     if(!DatabaseAccessor::getInstance()->isOpen){

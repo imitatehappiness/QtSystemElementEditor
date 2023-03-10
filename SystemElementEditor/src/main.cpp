@@ -3,13 +3,13 @@
 #include <QApplication>
 #include <QProxyStyle>
 #include <QStyleFactory>
-#include <QDebug>
+#include <QDir>
+#include <QMessageBox>
 
 const QString FONT_FAMILY_APP = "Times";
 const uint FONT_SIZE_APP = 9;
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){
     QApplication a(argc, argv);
 
     a.setStyle(new QProxyStyle(QStyleFactory::create("Fusion")));
@@ -21,7 +21,11 @@ int main(int argc, char *argv[])
     QString styleQSS = styleFile.readAll();
 
     if (styleQSS.length()==0){
-        qDebug()<<"Error appstyles.qss reading";
+        QMessageBox mBox;
+        mBox.setIcon(QMessageBox::Warning);
+        mBox.setText("Error appstyles.qss reading!");
+        mBox.setButtonText(QMessageBox::Ok, "Ok");
+        mBox.exec();
     }
     a.setStyleSheet(styleQSS);
 
