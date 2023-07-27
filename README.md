@@ -8,7 +8,7 @@
 
 # System Elements Editor
 
-The "Table Elements Editor" program is designed for editing table elements in a hierarchical manner. The root elements are entries with type=1. Only elements of type=1 can be nested within each other. These root elements may contain nested elements of type=2 and/or type=3.
+The "System Elements Editor" program is designed for editing table elements in a hierarchical manner. The root elements are entries with type=1. Only elements of type=1 can be nested within each other. These root elements may contain nested elements of type=2 and/or type=3.
 
 The program retrieves data from a database and displays it in the "System Composition" window. The elements of type=1 are displayed in bold, and their type value is not shown. Instead, the corresponding text "Type 2" or "Type 3" is displayed based on their numeric type value.
 
