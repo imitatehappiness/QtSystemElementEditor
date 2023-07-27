@@ -34,7 +34,7 @@ The program retrieves data from a database and displays it in the "System Compos
 ## Example
 
 <div align="center">
-  <video src="https://github.com/imitatehappiness/QtSystemElementEditor/assets/79199956/747ac817-3e45-4804-ae12-ee637a557039"/>
+  <video src="https://user-images.githubusercontent.com/79199956/223730727-e9d0a29d-b12b-4723-8be4-38124e3faf8d.mp4"/>
 <div/>
 
 
