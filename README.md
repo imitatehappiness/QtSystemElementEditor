@@ -6,22 +6,24 @@
   <h3 align="center"></h3>
 </p>
 
-## About The Project
+# Table Elements Editor
 
-The program is designed for editing table elements.
+The "Table Elements Editor" program is designed for editing table elements in a hierarchical manner. The root elements are entries with type=1. Only elements of type=1 can be nested within each other. These root elements may contain nested elements of type=2 and/or type=3.
 
-The root elements are entries with type=1. Only elements of type=1 can be nested in each other. 
+The program retrieves data from a database and displays it in the "System Composition" window. The elements of type=1 are displayed in bold, and their type value is not shown. Instead, the corresponding text "Type 2" or "Type 3" is displayed based on their numeric type value.
 
-They have nested elements of type 2 and/or 3.
+## System Composition Window
 
-Data from the database is displayed in the ***"System Composition"*** window.
++ The "System Composition" window displays a hierarchical tree of elements retrieved from the database.
++ Elements of type=1 are shown in bold, and their type value is hidden, displaying "Type 2" or "Type 3" based on the numeric value.
++ When you select an element of type=1 in the tree, the right tables display its directly nested elements (if any).
++ In the upper table, "Elements Type 2" are shown, and in the lower table, "Elements Type 3" are displayed.
 
-The "Type 1" elements are displayed in bold. For them, the do not show type value.Depending on the numeric value of type, show the corresponding text: ***"Type 2" / "Type 3".***
+## Editing Elements
 
-Only when an element of type "Type 1" is selected in the tree in the right tables
-show only its directly nested elements, if any, with "Type 2" elements in the upper table, and "Type 3" elements in the lower table.
-
-In the "System Composition" three, you can edit the ***"Type"*** column using ***QComboBox***. Write the changed values to the database. In the right tables ***("Elements Type n")***, only the ***"Size"*** column is available for editing. Write the changed values to the database. When displaying the size value, show all negative values in ***bold red***.
++ In the "System Composition" tree view, you can edit the "Type" column using a QComboBox. Any changes made to the type value will be updated and saved to the database.
++ In the right tables ("Elements Type 2" and "Elements Type 3"), you can edit the "Size" column. The program will write the changes back to the database.
++ When displaying the "Size" value, all negative values are shown in bold red for better visibility.
 
 >**PostgreSQL:**  9.6 32bit
 >
@@ -29,7 +31,7 @@ In the "System Composition" three, you can edit the ***"Type"*** column using **
 >
 >**Profile Qt:**  5.11.0 MinGW 32bit
 
-## Usage example
+## Example
 
 <div align="center">
   <video src="https://user-images.githubusercontent.com/79199956/223730727-e9d0a29d-b12b-4723-8be4-38124e3faf8d.mp4"/>
